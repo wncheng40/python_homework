@@ -1,6 +1,5 @@
 # Write your code here.
 # ========================= # Task 1: Hello World ====================
-import whatthepatch
 def hello():
     return "Hello!"
 
