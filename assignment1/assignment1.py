@@ -25,6 +25,8 @@ def calc(a,b,operator ="multiply"):
                 return a % b
             case "power":
                 return a ** b
+            case "int_divide":
+                return a // b
             case _:  
                 return None  
     #error handling for division by zero
@@ -44,9 +46,9 @@ print(calc(10, 0, "divide"))
 print(calc("hello", "world", "subtract"))
 
 # ========================= # Task 4: Data Type Conversion ===========================
-def data_type_conversion(value, type):
+def data_type_conversion(value, type_name):
     try:
-        match type:
+        match type_name:
             case "int":
                 return int(value)
             case "float":
@@ -56,7 +58,7 @@ def data_type_conversion(value, type):
             case _:
                 return None
     except ValueError:
-        return f"You can't convert {value} into a {type}."
+        return f"You can't convert {value} into a {type_name}."
 
 print(data_type_conversion("110", "float"))
 print(data_type_conversion(7,"float"))
@@ -76,8 +78,6 @@ def grade(*args):
             return "C"
         elif avg >= 60:
             return "D"
-        elif avg >= 50:
-            return "F"
         else:
             return None
     except (TypeError, ZeroDivisionError):
