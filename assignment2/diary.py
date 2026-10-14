@@ -1,4 +1,3 @@
-from numpy import true_divide
 import traceback
 
 
@@ -9,11 +8,12 @@ try:
         while True:
             #get user input
             user_input = input(prompt)
+            #write user input to diary.txt
+            f.write(user_input + "\n")
             #check user input if "done for now"
             if user_input == "done for now":
                 break
-            #write user input to diary.txt
-            f.write(user_input + "\n")
+            
             prompt = "What else?"
 
     pass
